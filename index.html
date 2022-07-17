@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivational Quotes
+    </title>
+    <link rel = "stylesheet" href ="style.css">
+</head>
+<body>
+    <div class = "Quotes-container" id = "quotesid">
+        <div class  = "text" >Motivational Quotes</div>
+        <div id ="result" class = "content"></div>
+        
+<script type = "text/javascript">
+function facts(){  
+    fetch("https://type.fit/api/quotes")
+    .then((response) =>
+     {return response.json();
+    })
+    .then((data) => {
+        var b = Math.floor(Math.random()*1643);
+        console.log(data[b].text);
+        var a = data[b].text;
+        document.getElementById('result').innerHTML=a;
+    })
+
+}
+facts();
+setTimeout(function(){location.reload();},15000);
+
+
+</script>
+
+    </div>
+    
+    
+</body>
+</html>
